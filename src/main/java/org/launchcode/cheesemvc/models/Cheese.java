@@ -1,33 +1,47 @@
 package org.launchcode.cheesemvc.models;
 
-import java.util.HashMap;
-
+/**
+ * Created by LaunchCode
+ */
 public class Cheese {
 
-    private String cheeseName;
-    private String cheeseDescription;
+    private String name;
+    private String description;
+    private int cheeseId;
+    private static int nextId = 1;
+
+    public Cheese(String name, String description) {
+        this();
+        this.name = name;
+        this.description = description;
+    }
 
     public Cheese() {
+        cheeseId = nextId;
+        nextId++;
     }
 
-    public Cheese(String cheeseName, String cheeseDescription) {
-        this.cheeseName = cheeseName;
-        this.cheeseDescription = cheeseDescription;
+    public int getCheeseId() {
+        return cheeseId;
     }
 
-    public String getCheeseName() {
-        return cheeseName;
+    public void setCheeseId(int cheeseId) {
+        this.cheeseId = cheeseId;
     }
 
-    public void setCheeseName(String cheeseName) {
-        this.cheeseName = cheeseName;
+    public String getName() {
+        return name;
     }
 
-    public String getCheeseDescription() {
-        return cheeseDescription;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCheeseDescription(String cheeseDescription) {
-        this.cheeseDescription = cheeseDescription;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
